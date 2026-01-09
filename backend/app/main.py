@@ -10,7 +10,10 @@ Base.metadata.create_all(bind=engine)
 app = FastAPI(
     title="Mi API",
     description="API para servicios de IA y electricidad",
-    version="1.0.0"
+    version="1.0.0",
+    docs_url="/api/docs",
+    redoc_url="/api/redoc",
+    openapi_url="/api/openapi.json"
 )
 
 # CORS: Permitir que Next.js (localhost:3000) pueda hacer requests
@@ -31,15 +34,15 @@ app.add_middleware(
 app.include_router(contacts_router)
 
 # Endpoint de prueba
-@app.get("/")
+@app.get("/api/")
 def read_root():
     """Endpoint de bienvenida"""
     return {
         "mensaje": "Bienvenido a MI API",
-        "docs": "http://localhost:8000/docs"
+        "docs": "/api/docs"
     }
 
-@app.get("/health")
+@app.get("/api/health")
 def health_check():
     """Verificar que el servidor está vivo"""
     return {"status": "ok"}
