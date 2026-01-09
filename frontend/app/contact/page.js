@@ -154,7 +154,7 @@ export default function Contact() {
                                 📧 Email
                             </h3>
                             <p className="text-lg text-gray-700">
-                                contacto@tudominio.com
+                                elingesmartsgrids@gmail.cloud
                             </p>
                         </div>
 
@@ -163,7 +163,7 @@ export default function Contact() {
                                 📱 Teléfono
                             </h3>
                             <p className="text-lg text-gray-700">
-                                +57 300 123 4567
+                                3223578118
                             </p>
                         </div>
 
@@ -172,7 +172,7 @@ export default function Contact() {
                                 📍 Ubicación
                             </h3>
                             <p className="text-lg text-gray-700">
-                                Cartago, Valle del Cauca, Colombia
+                                Pereira Risaralda y Medellin Antioquia
                             </p>
                         </div>
                     </div>

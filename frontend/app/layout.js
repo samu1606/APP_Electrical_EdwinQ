@@ -14,8 +14,9 @@ export default function RootLayout({ children }) {
         <header className="bg-white shadow-md sticky top-0 z-50">
           <nav className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             {/* Logo */}
-            <Link href="/" className="text-2xl font-bold text-blue-600">
-              MI MARCA
+            <Link href="/" className="flex items-center gap-2 text-2xl font-bold text-blue-600">
+              <img src="/robot-icon.png" alt="El Inge Robot" className="h-10 w-10" />
+              EL INGE: SMART GRIDS
             </Link>
 
             {/* Menú */}
