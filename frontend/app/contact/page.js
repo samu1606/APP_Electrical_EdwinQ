@@ -27,9 +27,7 @@ export default function Contact() {
         setSuccess(false)
 
         try {
-            // Usar variable de entorno o fallback a localhost:8000
-            const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
-            const response = await fetch(`${apiUrl}/api/contacts/`, {
+            const response = await fetch('/api/contacts/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
