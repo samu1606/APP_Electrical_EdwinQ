@@ -19,6 +19,7 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:3000",      # Frontend local
         "http://localhost:3001",      # Frontend (puerto alternativo)
+        "http://148.230.90.171",      # Tu IP en producción
         "https://tudominio.com",      # Tu dominio en producción
     ],
     allow_credentials=True,
