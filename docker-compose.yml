@@ -12,6 +12,7 @@ services:
       PYTHONUNBUFFERED: 1
     networks:
       - app-network
+      - dokploy-network
     restart: unless-stopped
 
   # Frontend (Next.js)
@@ -47,3 +48,5 @@ volumes: {}
 networks:
   app-network:
     driver: bridge
+  dokploy-network:
+    external: true
