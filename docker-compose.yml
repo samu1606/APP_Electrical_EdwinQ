@@ -28,21 +28,6 @@ services:
       - app-network
     restart: unless-stopped
 
-  # Nginx (Proxy Reverso)
-  nginx:
-    build:
-      context: ./nginx
-      dockerfile: Dockerfile
-    depends_on:
-      - backend
-      - frontend
-    ports:
-      - "80:80"
-      - "443:443"
-    networks:
-      - app-network
-    restart: unless-stopped
-
 volumes: {}
 
 networks:

@@ -20,10 +20,11 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:3000",      # Frontend local
-        "http://localhost:3001",      # Frontend (puerto alternativo)
-        "http://148.230.90.171",      # Tu IP en producción
-        "https://tudominio.com",      # Tu dominio en producción
+        "http://localhost:3000",                  # Frontend local
+        "http://localhost:3001",                  # Frontend alternativo
+        "https://elingesmartgrids.cloud",         # Producción (HTTPS)
+        "https://www.elingesmartgrids.cloud",     # Producción (www)
+        "http://148.230.90.171",                  # Fallback IP
     ],
     allow_credentials=True,
     allow_methods=["*"],
