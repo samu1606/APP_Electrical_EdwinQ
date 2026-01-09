@@ -2,8 +2,17 @@ export default function Home() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="min-h-screen bg-gradient-to-r from-blue-600 to-blue-800 text-white flex items-center">
-        <div className="max-w-6xl mx-auto px-6 w-full">
+      <section className="relative min-h-screen text-white flex items-center">
+        {/* Background Image & Overlay */}
+        <div
+          className="absolute inset-0 z-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/hero-bg.png')" }}
+        >
+          <div className="absolute inset-0 bg-black/70"></div> {/* Dark overlay for readability */}
+        </div>
+
+        {/* Content */}
+        <div className="max-w-6xl mx-auto px-6 w-full relative z-10">
           <div className="max-w-3xl">
             <h1 className="text-6xl font-bold mb-6 leading-tight">
               Medio Ambiente, Eficiencia Energética e IA
@@ -15,13 +24,13 @@ export default function Home() {
             <div className="flex gap-4">
               <a
                 href="/contact"
-                className="bg-white text-blue-600 font-bold py-4 px-8 rounded-lg hover:bg-gray-100 transition text-lg"
+                className="bg-white text-blue-900 font-bold py-4 px-8 rounded-lg hover:bg-gray-100 transition text-lg"
               >
                 Contactarme
               </a>
               <a
                 href="/services"
-                className="bg-blue-500 text-white font-bold py-4 px-8 rounded-lg hover:bg-blue-700 transition text-lg border-2 border-white"
+                className="bg-blue-600/80 backdrop-blur-sm text-white font-bold py-4 px-8 rounded-lg hover:bg-blue-700 transition text-lg border-2 border-transparent hover:border-white"
               >
                 Ver Servicios
               </a>
