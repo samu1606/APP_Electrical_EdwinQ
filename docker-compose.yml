@@ -4,7 +4,6 @@ services:
   # Base de Datos
   postgres:
     image: postgres:15-alpine
-    container_name: mi-app-postgres
     environment:
       POSTGRES_USER: ${POSTGRES_USER:-usuario}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-password123}
@@ -27,7 +26,6 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: mi-app-backend
     environment:
       DATABASE_URL: ${DATABASE_URL:-postgresql+psycopg://usuario:password123@postgres:5432/mi_app_db}
       PYTHONUNBUFFERED: 1
@@ -47,13 +45,12 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    container_name: mi-app-frontend
     ports:
       - "3001:3000"
     depends_on:
       - backend
     environment:
-      NEXT_PUBLIC_API_URL: http://localhost:8000
+      NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:8000}
     volumes:
       - ./frontend:/app
       - /app/node_modules
@@ -67,7 +64,6 @@ services:
     build:
       context: ./nginx
       dockerfile: Dockerfile
-    container_name: mi-app-nginx
     ports:
       - "80:80"
       - "443:443"
