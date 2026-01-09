@@ -6,11 +6,11 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6 w-full">
           <div className="max-w-3xl">
             <h1 className="text-6xl font-bold mb-6 leading-tight">
-              Ingeniero Electricista + IA
+              Medio Ambiente, Eficiencia Energética e IA
             </h1>
             <p className="text-2xl mb-8 opacity-90 leading-relaxed">
-              Transformo tu negocio con soluciones de inteligencia artificial
-              y tecnología especializada en electricidad.
+              Impulso la sostenibilidad de tu negocio optimizando el consumo energético con
+              Inteligencia Artificial. Tecnología avanzada para un futuro más verde y eficiente.
             </p>
             <div className="flex gap-4">
               <a
