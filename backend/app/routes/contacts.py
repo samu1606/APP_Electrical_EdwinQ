@@ -4,7 +4,7 @@ from ..schemas import ContactMessageCreate, ContactMessageResponse
 from ..models import ContactMessage
 from ..database import get_db
 
-router = APIRouter(prefix="/api/contacts", tags=["contacts"])
+router = APIRouter(prefix="/contacts", tags=["contacts"])
 
 @router.post("/", response_model=ContactMessageResponse)
 def create_contact(

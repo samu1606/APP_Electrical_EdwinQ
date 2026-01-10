@@ -27,7 +27,8 @@ export default function Contact() {
         setSuccess(false)
 
         try {
-            const response = await fetch('/api/contacts/', {
+            const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+            const response = await fetch(`${apiUrl}/contacts/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
