@@ -42,8 +42,8 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - ./certbot/conf:/etc/letsencrypt
-      - ./certbot/www:/var/www/certbot
+      - certs:/etc/letsencrypt
+      - certbot_www:/var/www/certbot
     depends_on:
       - frontend
       - backend
@@ -55,8 +55,8 @@ services:
   certbot:
     image: certbot/certbot
     volumes:
-      - ./certbot/conf:/etc/letsencrypt
-      - ./certbot/www:/var/www/certbot
+      - certs:/etc/letsencrypt
+      - certbot_www:/var/www/certbot
     entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
     networks:
       - app-network
@@ -66,3 +66,7 @@ networks:
     driver: bridge
   dokploy-network:
     external: true
+
+volumes:
+  certs:
+  certbot_www:
