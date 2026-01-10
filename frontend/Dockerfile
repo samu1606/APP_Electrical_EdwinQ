@@ -12,6 +12,10 @@ RUN npm ci
 # Copiar código
 COPY . .
 
+# ARG para variables de entorno en build time
+ARG NEXT_PUBLIC_API_URL
+ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
+
 # Crear build de Next.js
 RUN npm run build
 
