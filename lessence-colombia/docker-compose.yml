@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  web:
+    image: nginx:alpine
+    volumes:
+      - .:/usr/share/nginx/html
+    ports:
+      - "80"
+    networks:
+      - dokploy-network
+    restart: unless-stopped
+
+networks:
+  dokploy-network:
+    external: true

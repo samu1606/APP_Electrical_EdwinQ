@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'ESSENCE COLOMBIA | Marroquinería de Lujo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Barra de Navegación -->
+    <nav class="navbar">
+        <div class="logo">L'ESSENCE</div>
+        <div class="nav-links">
+            <a href="#coleccion">Colección</a>
+            <a href="#historia">Nuestra Esencia</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+        <div class="cart-icon">
+            <span id="cart-count">0</span>
+            🛒
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h2 class="sub-title">L'ESSENCE COLOMBIA</h2>
+            <h1>Elegancia que Inspira</h1>
+            <p>Descubre la esencia de la marroquinería colombiana. Diseños clásicos con un toque moderno.</p>
+            <a href="#coleccion" class="btn-primary">Ver Colección</a>
+        </div>
+    </header>
+
+    <!-- Promo Banner -->
+    <div class="promo-banner">
+        <span>Últimas unidades: ¡Todos nuestros bolsos a $90.000 COP! (Precio regular $120.000)</span>
+    </div>
+
+    <!-- Sección de Productos -->
+    <section id="coleccion" class="products">
+        <div class="section-title">
+            <h2>Nuestra Colección</h2>
+            <div class="underline"></div>
+        </div>
+        
+        <div class="product-grid" id="product-grid">
+            <!-- Los productos se cargarán aquí con JS -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>L'ESSENCE</h3>
+                <p>Orgullosamente Colombiano.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>WhatsApp: +57 322 357 8118</p>
+                <p>Ubicación: Pereira - Medellín</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 L'ESSENCE COLOMBIA. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modal de Carrito / WhatsApp -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Tu Pedido</h2>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <strong>Total: $<span id="total-price">0</span> COP</strong>
+            </div>
+            <button id="checkout-btn" class="btn-checkout">Finalizar Pedido por WhatsApp</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

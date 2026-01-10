@@ -35,6 +35,17 @@ services:
       - dokploy-network
     restart: unless-stopped
 
+  # L'ESSENCE Store (Static)
+  lessence:
+    image: nginx:alpine
+    volumes:
+      - ./lessence-colombia:/usr/share/nginx/html
+    expose:
+      - "80"
+    networks:
+      - app-network
+    restart: unless-stopped
+
   # Nginx (Reverse Proxy & SSL)
   nginx:
     build:
@@ -59,7 +70,7 @@ services:
     volumes:
       - certs:/etc/letsencrypt
       - certbot_www:/var/www/certbot
-    entrypoint: "/bin/sh -c 'if [ ! -d /etc/letsencrypt/live/elingesmartgrids.cloud ]; then certbot certonly --webroot -w /var/www/certbot -d elingesmartgrids.cloud -d www.elingesmartgrids.cloud -d api.elingesmartgrids.cloud --email samuell160612@gmail.com --agree-tos --no-eff-email --non-interactive; fi; trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+    entrypoint: "/bin/sh -c 'if [ ! -d /etc/letsencrypt/live/elingesmartgrids.cloud ]; then certbot certonly --webroot -w /var/www/certbot -d elingesmartgrids.cloud -d www.elingesmartgrids.cloud -d api.elingesmartgrids.cloud -d lessence.elingesmartgrids.cloud --email samuell160612@gmail.com --agree-tos --no-eff-email --non-interactive; fi; trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
     networks:
       - app-network
 
