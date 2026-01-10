@@ -35,17 +35,6 @@ services:
       - dokploy-network
     restart: unless-stopped
 
-  # L'ESSENCE Store (Static)
-  lessence:
-    image: nginx:alpine
-    volumes:
-      - ./lessence-colombia:/usr/share/nginx/html
-    expose:
-      - "80"
-    networks:
-      - app-network
-    restart: unless-stopped
-
   # Nginx (Reverse Proxy & SSL)
   nginx:
     build:
@@ -57,6 +46,7 @@ services:
     volumes:
       - certs:/etc/letsencrypt
       - certbot_www:/var/www/certbot
+      - ./lessence-colombia:/var/www/lessence
     depends_on:
       - frontend
       - backend
